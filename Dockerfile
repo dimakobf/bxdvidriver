@@ -1,7 +1,6 @@
 FROM rosalab/rosa2019.1
 
 RUN dnf install -y dnf-utils
-RUN yum-config-manager --add-repo \http://abf-downloads.rosalinux.ru/dimakob_personal/repository/rosa2019.1/x86_64/main/release/
-RUN dnf install -y texlive-bxdvidriver
+RUN dnf install http://abf-downloads.rosalinux.ru/dimakob_personal/repository/rosa2019.1/x86_64/main/release/texlive-bxdvidriver-0.2a-1-rosa2019.1.noarch.rpm
 
 ENTRYPOINT ["rpm -q texlive-bxdvidriver"]
